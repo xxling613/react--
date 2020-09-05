@@ -1,6 +1,9 @@
 import React from 'react';
 // import logo from './logo.svg';
-import T from './home';
+import T from './new';
+// import { Button } from 'antd';
+import 'antd/dist/antd.css';
+// import Count from  './count'
 import './App.css';
 
 
@@ -9,6 +12,7 @@ function App() {
     <div className="App">
       <header className="App-header">
           <T/>
+          {/*<Count/>*/}
         {/*<img src={logo} className="App-logo" alt="logo" />*/}
         {/*<p>*/}
           {/*Edit <code>src/App.js</code> and save to reload.*/}

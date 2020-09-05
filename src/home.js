@@ -9,7 +9,7 @@ class home extends Component{
         super(props);
         this.state= {
             list: [],
-            show:false,
+            visible:false,
             names:'',
             qqs:'',
             index:'',
@@ -46,17 +46,18 @@ class home extends Component{
     //保存
     save=()=>{
         this.setState({
-            show:true,
+            visible:true,
             newObj:{name:[this.refs.newName.value],qq:[this.refs.newQq.value]},
             list:update(this.state.list,{$splice:[[this.state.index,1,this.state.newObj]]})
         },()=>{
             console.log(this.state.index,this.state.newObj,this.state.list);
+
         })
 }
 //取消
     cancel=()=>{
         this.setState({
-            show:false,
+            visible:false,
         },()=>{
             console.log('取消')
         })
@@ -90,7 +91,7 @@ class home extends Component{
                     </tbody>
                 </table>
 
-                <div className="window" show={this.state.show?1:0}>
+                <div className="window" visible={this.state.visible}>
                     <p>姓名:<input type="text" defaultValue={this.state.names} ref="newName" /></p>
                     <p>qq:<input type="text" defaultValue={this.state.qqs} ref="newQq"/></p>
                     <button onClick={this.save}>保存</button>
